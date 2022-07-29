@@ -37,7 +37,7 @@ class MovieController {
         try{
             const { quote, author } = req.body;
 
-            const movie = Movie.create({quote, author});
+            const movie = await Movie.create({quote, author});
 
             return res.json(movie);
         } catch (e) {
@@ -60,7 +60,7 @@ class MovieController {
             }
 
             return res.json(movie);
-        } catch (error) {
+        } catch (e) {
             return next(ApiError.internal(e.message));
         }
     }
