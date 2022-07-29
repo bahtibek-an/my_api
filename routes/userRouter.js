@@ -1,8 +1,6 @@
 import { Router } from 'express';
-
-// import all controllers
 import userController from '../app/controllers/userController.js';
-import authMiddleware from '../middleware/AuthMiddleware.js';
+import authMiddleware from '../middleware/authMiddleware.js';
 
 const routes = new Router();
 
