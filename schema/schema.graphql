@@ -1,0 +1,45 @@
+type User {
+    id: ID
+    email: String
+    token: String
+}
+
+input UserInput {
+    id: ID
+    email: String!
+    password: String!
+}
+
+type Query {
+    getAllUsers: [User]
+    getUser(id: ID): User
+}
+
+type Mutation {
+    registration(input: UserInput): User
+    login(input: UserInput): User
+}
+
+
+type Movie{
+    id: ID
+    quote: String
+    author: String
+}
+
+input MovieInput {
+    id: ID
+    quote: String!
+    author: String!
+}
+
+type Query {
+    getAllMovies: [Movie]
+    getMovie(id: ID): Movie
+}
+
+type Mutation {
+    createMovie(input: MovieInput): Movie
+    editMovie(id: ID, quote: String, author: String): Movie
+    deleteMovie(id: ID): Movie
+}
