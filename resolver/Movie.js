@@ -12,6 +12,8 @@ const movieResolvers = {
     },
     Mutation: {
         createMovie: async (parent, { input }) => {
+            const {quote, author} = input;
+
             const movie = await Movie.create({quote, author});
 
             return movie;
